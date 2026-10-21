@@ -1,0 +1,634 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXORA | سفارش طراحی سایت</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Tahoma, Arial, sans-serif;
+            background: #080d19;
+            color: #ffffff;
+            line-height: 1.9;
+        }
+
+        header {
+            background: #10182b;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            border-bottom: 1px solid #263650;
+        }
+
+        .logo {
+            color: #00e5ff;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-shadow: 0 0 15px #00e5ff70;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 8px;
+        }
+
+        nav a:hover {
+            color: #00e5ff;
+            background: #00e5ff15;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 90px 20px;
+            background: radial-gradient(circle at top, #172c4b, #080d19 72%);
+        }
+
+        .hero h1 {
+            font-size: clamp(28px, 5vw, 44px);
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #00e5ff;
+            text-shadow: 0 0 18px #00e5ff70;
+        }
+
+        .hero p {
+            color: #c4d0e3;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #00e5ff;
+            color: #07111d;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: Tahoma, Arial, sans-serif;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .btn:hover {
+            background: #fff;
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 55px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            color: #00e5ff;
+            margin-bottom: 15px;
+        }
+
+        .section-description {
+            text-align: center;
+            color: #c4d0e3;
+            margin: 0 auto 30px;
+            max-width: 700px;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #111b2e;
+            border: 1px solid #263650;
+            border-radius: 14px;
+            padding: 25px 20px;
+            text-align: center;
+            transition: 0.25s;
+        }
+
+        .card:hover {
+            border-color: #00e5ff;
+            transform: translateY(-4px);
+        }
+
+        .card .symbol {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            color: #00e5ff;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: #c4d0e3;
+            font-size: 14px;
+        }
+
+        #about {
+            background: #0d1525;
+            text-align: center;
+        }
+
+        #about p {
+            max-width: 750px;
+            margin: auto;
+            color: #c4d0e3;
+        }
+
+        #order {
+            background: #0a1120;
+        }
+
+        .form-container {
+            max-width: 760px;
+            margin: auto;
+            padding: 28px;
+            background: #111b2e;
+            border: 1px solid #263650;
+            border-radius: 16px;
+            box-shadow: 0 0 30px #00e5ff0b;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .field.full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            color: #e6f2ff;
+            font-size: 14px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #34445f;
+            border-radius: 8px;
+            background: #0b1323;
+            color: #fff;
+            font-family: Tahoma, Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: 1px solid #00e5ff;
+            border-color: #00e5ff;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #899bb5;
+        }
+
+        select option {
+            background: #10182b;
+            color: #fff;
+        }
+
+        .hint {
+            font-size: 12px;
+            color: #9aabc4;
+        }
+
+        .checks {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .check-item {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 8px;
+            padding: 10px;
+            border: 1px solid #263650;
+            border-radius: 8px;
+            background: #0b1323;
+        }
+
+        .check-item input {
+            width: 17px;
+            height: 17px;
+            accent-color: #00e5ff;
+            flex-shrink: 0;
+        }
+
+        .check-item label {
+            cursor: pointer;
+            font-size: 13px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            margin-top: 22px;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: #c4d0e3;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 22px;
+            background: #10182b;
+            color: #9aabc4;
+            border-top: 1px solid #263650;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                justify-content: center;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            .form-grid,
+            .checks {
+                grid-template-columns: 1fr;
+            }
+
+            .form-container {
+                padding: 18px;
+            }
+
+            section {
+                padding: 40px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">NEXORA</div>
+
+        <nav>
+            <a href="#home">خانه</a>
+            <a href="#services">خدمات</a>
+            <a href="#about">درباره ما</a>
+            <a href="#order">سفارش طراحی سایت</a>
+            <a href="#contact">تماس</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <h1>ایده‌ات رو به دنیای وب بیار؛ با <span>NEXORA</span></h1>
+            <p>برای کسب‌وکارت یک سایت اختصاصی سفارش بده.</p>
+            <a class="btn" href="#order">شروع سفارش</a>
+        </section>
+
+        <section id="services">
+            <h2 class="section-title">خدمات طراحی سایت</h2>
+            <p class="section-description">
+                از معرفی کسب‌وکار تا فروشگاه اینترنتی، نیازت رو انتخاب کن
+                تا درباره پروژه‌ات صحبت کنیم.
+            </p>
+
+            <div class="services">
+                <div class="card">
+                    <div class="symbol">🌐</div>
+                    <h3>سایت شرکتی</h3>
+                    <p>معرفی کسب‌وکار، خدمات، نمونه‌کار و راه‌های تماس.</p>
+                </div>
+
+                <div class="card">
+                    <div class="symbol">🛍️</div>
+                    <h3>فروشگاه اینترنتی</h3>
+                    <p>معرفی محصولات و آماده‌سازی مسیر سفارش مشتریان.</p>
+                </div>
+
+                <div class="card">
+                    <div class="symbol">🎨</div>
+                    <h3>سایت شخصی</h3>
+                    <p>ساخت صفحه شخصی برای رزومه، نمونه‌کار یا معرفی.</p>
+                </div>
+
+                <div class="card">
+                    <div class="symbol">📱</div>
+                    <h3>طراحی واکنش‌گرا</h3>
+                    <p>نمایش مناسب سایت در موبایل، تبلت و کامپیوتر.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2 class="section-title">درباره NEXORA</h2>
+            <p>
+                در NEXORA تلاش می‌کنیم ایده‌ها را به تجربه‌های دیجیتال
+                ساده، جذاب و کاربردی تبدیل کنیم. جزئیات هر پروژه پس از
+                بررسی نیازها و توافق درباره هزینه و زمان مشخص می‌شود.
+            </p>
+        </section>
+
+        <section id="order">
+            <h2 class="section-title">فرم سفارش طراحی سایت</h2>
+            <p class="section-description">
+                اطلاعات زیر رو وارد کن. با زدن دکمه ارسال، پیام سفارش
+                در واتساپ آماده می‌شه.
+            </p>
+
+            <div class="form-container">
+                <form id="orderForm">
+                    <div class="form-grid">
+
+                        <div class="field">
+                            <label for="customerName">نام و نام خانوادگی *</label>
+                            <input
+                                type="text"
+                                id="customerName"
+                                name="customerName"
+                                placeholder="نام شما"
+                                autocomplete="name"
+                                required
+                            >
+                        </div>
+
+                        <div class="field">
+                            <label for="customerPhone">شماره تماس *</label>
+                            <input
+                                type="tel"
+                                id="customerPhone"
+                                name="customerPhone"
+                                placeholder="شماره‌ای که با آن در دسترس هستید"
+                                autocomplete="tel"
+                                required
+                            >
+                        </div>
+
+                        <div class="field">
+                            <label for="siteType">نوع سایت *</label>
+                            <select id="siteType" name="siteType" required>
+                                <option value="">انتخاب کن</option>
+                                <option value="سایت شرکتی">سایت شرکتی</option>
+                                <option value="فروشگاه اینترنتی">فروشگاه اینترنتی</option>
+                                <option value="سایت شخصی یا رزومه">سایت شخصی یا رزومه</option>
+                                <option value="سایت خدماتی">سایت خدماتی</option>
+                                <option value="سایت آموزشی">سایت آموزشی</option>
+                                <option value="سایت بازی و سرگرمی">سایت بازی و سرگرمی</option>
+                                <option value="سایر">سایر</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="siteName">نام سایت یا کسب‌وکار</label>
+                            <input
+                                type="text"
+                                id="siteName"
+                                name="siteName"
+                                placeholder="مثلاً NEXORA"
+                            >
+                        </div>
+
+                        <div class="field full">
+                            <label for="sitePurpose">موضوع و هدف سایت *</label>
+                            <textarea
+                                id="sitePurpose"
+                                name="sitePurpose"
+                                rows="3"
+                                placeholder="مثلاً معرفی خدمات، فروش محصول یا دریافت سفارش"
+                                required
+                            ></textarea>
+                        </div>
+
+                        <div class="field full">
+                            <label>چه امکاناتی نیاز داری؟</label>
+                            <div class="checks">
+                                <div class="check-item">
+                                    <input type="checkbox" id="feature1" name="features" value="صفحه معرفی">
+                                    <label for="feature1">صفحه معرفی</label>
+                                </div>
+
+                                <div class="check-item">
+                                    <input type="checkbox" id="feature2" name="features" value="فرم سفارش">
+                                    <label for="feature2">فرم سفارش</label>
+                                </div>
+
+                                <div class="check-item">
+                                    <input type="checkbox" id="feature3" name="features" value="اتصال به واتساپ">
+                                    <label for="feature3">اتصال به واتساپ</label>
+                                </div>
+
+                                <div class="check-item">
+                                    <input type="checkbox" id="feature4" name="features" value="فروشگاه محصولات">
+                                    <label for="feature4">فروشگاه محصولات</label>
+                                </div>
+
+                                <div class="check-item">
+                                    <input type="checkbox" id="feature5" name="features" value="پنل مدیریت">
+                                    <label for="feature5">پنل مدیریت</label>
+                                </div>
+
+                                <div class="check-item">
+                                    <input type="checkbox" id="feature6" name="features" value="نمایش مناسب موبایل">
+                                    <label for="feature6">نمایش مناسب موبایل</label>
+                                </div>
+
+                                <div class="check-item">
+                                    <input type="checkbox" id="feature7" name="features" value="درگاه پرداخت">
+                                    <label for="feature7">درگاه پرداخت</label>
+                                </div>
+
+                                <div class="check-item">
+                                    <input type="checkbox" id="feature8" name="features" value="دامنه و میزبانی">
+                                    <label for="feature8">دامنه و میزبانی</label>
+                                </div>
+                            </div>
+                            <p class="hint">هر تعداد امکان که می‌خوای انتخاب کن.</p>
+                        </div>
+
+                        <div class="field">
+                            <label for="budget">بودجه تقریبی</label>
+                            <select id="budget" name="budget">
+                                <option value="هنوز مشخص نیست">هنوز مشخص نیست</option>
+                                <option value="کمتر از ۵ میلیون تومان">کمتر از ۵ میلیون تومان</option>
+                                <option value="۵ تا ۱۵ میلیون تومان">۵ تا ۱۵ میلیون تومان</option>
+                                <option value="۱۵ تا ۳۰ میلیون تومان">۱۵ تا ۳۰ میلیون تومان</option>
+                                <option value="بیشتر از ۳۰ میلیون تومان">بیشتر از ۳۰ میلیون تومان</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="deadline">زمان موردنظر برای تحویل</label>
+                            <select id="deadline" name="deadline">
+                                <option value="عجله‌ای ندارم">عجله‌ای ندارم</option>
+                                <option value="کمتر از یک هفته">کمتر از یک هفته</option>
+                                <option value="یک تا دو هفته">یک تا دو هفته</option>
+                                <option value="دو تا چهار هفته">دو تا چهار هفته</option>
+                                <option value="بیشتر از یک ماه">بیشتر از یک ماه</option>
+                            </select>
+                        </div>
+
+                        <div class="field full">
+                            <label for="reference">نمونه سایت دلخواه (اختیاری)</label>
+                            <input
+                                type="url"
+                                id="reference"
+                                name="reference"
+                                placeholder="https://example.com"
+                            >
+                        </div>
+
+                        <div class="field full">
+                            <label for="details">توضیحات تکمیلی</label>
+                            <textarea
+                                id="details"
+                                name="details"
+                                rows="4"
+                                placeholder="هر چیزی که درباره سایتت باید بدونیم بنویس..."
+                            ></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn submit-btn">
+                        ارسال سفارش به واتساپ
+                    </button>
+
+                    <p class="hint" style="margin-top: 12px; text-align: center;">
+                        با زدن دکمه، واتساپ باز می‌شود. برای ارسال نهایی باید
+                        خودت پیام را در واتساپ بفرستی.
+                    </p>
+                </form>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2 class="section-title">تماس با NEXORA</h2>
+            <p>برای پرسش درباره طراحی سایت، سفارش خودت رو ثبت کن.</p>
+            <a class="btn" href="#order">ثبت سفارش</a>
+        </section>
+      
+       
+<section id="follow" style="text-align:center; background:#0d1525;">
+    <h2 class="section-title">✨ از NEXORA خوشت اومد؟</h2>
+
+    <p style="color:#c4d0e3; margin-bottom:25px;">
+        برای دیدن نمونه‌کارها، پروژه‌های جدید و خدمات بیشتر،
+        ما رو در شبکه‌های اجتماعی دنبال کن!
+    </p>
+
+    <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
+
+        <a href="https://instagram.com/"
+           target="_blank" rel="noopener noreferrer"
+           class="btn">
+            📸 اینستاگرام ما
+        </a>
+
+        <a href="#order" class="btn">
+            💻 سفارش طراحی سایت
+        </a>
+
+    </div>
+</section>
+
+
+
+    </main>
+
+    <footer>
+        © 2026 NEXORA | تمامی حقوق محفوظ است.
+    </footer>
+
+    <script>
+        document.getElementById("orderForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("customerName").value.trim();
+            const phone = document.getElementById("customerPhone").value.trim();
+            const siteType = document.getElementById("siteType").value;
+            const siteName = document.getElementById("siteName").value.trim();
+            const purpose = document.getElementById("sitePurpose").value.trim();
+            const budget = document.getElementById("budget").value;
+            const deadline = document.getElementById("deadline").value;
+            const reference = document.getElementById("reference").value.trim();
+            const details = document.getElementById("details").value.trim();
+
+            const selectedFeatures = Array.from(
+                document.querySelectorAll('input[name="features"]:checked')
+            ).map(function(item) {
+                return item.value;
+            });
+
+            const message =
+                "سلام، یک سفارش طراحی سایت از NEXORA دارم 🌐" + "\n\n" +
+                "نام مشتری: " + name + "\n" +
+                "شماره تماس: " + phone + "\n" +
+                "نوع سایت: " + siteType + "\n" +
+                "نام سایت یا کسب‌وکار: " + (siteName || "مشخص نشده") + "\n" +
+                "هدف سایت: " + purpose + "\n" +
+                "امکانات موردنیاز: " + (selectedFeatures.length ? selectedFeatures.join("، ") : "انتخاب نشده") + "\n" +
+                "بودجه تقریبی: " + budget + "\n" +
+                "زمان تحویل: " + deadline + "\n" +
+                "نمونه سایت: " + (reference || "ندارد") + "\n" +
+                "توضیحات تکمیلی: " + (details || "ندارد");
+
+            const whatsappNumber = "989212284154";
+            const whatsappURL =
+                "https://wa.me/" + whatsappNumber + "?text=" +
+                encodeURIComponent(message);
+
+            window.open(whatsappURL, "_blank");
+        });
+    </script>
+
+</body>
+</html>
